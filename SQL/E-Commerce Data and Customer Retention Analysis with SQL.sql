@@ -133,7 +133,7 @@ WHERE	dense_number = 3
 --as well as the ratio of these products to the total number of products purchased by the customer.
 --Use CASE Expression, CTE, CAST AND such Aggregate Functions
 
---Her bir müşterinin aldığı ürünler içerisinden product 11 ve product 14' ü satın alma oranınını hesaplayın
+--Her bir mÃ¼Ã¾terinin aldÃ½Ã°Ã½ Ã¼rÃ¼nler iÃ§erisinden product 11 ve product 14' Ã¼ satÃ½n alma oranÃ½nÃ½nÃ½ hesaplayÃ½n
 
 SELECT *
 FROM combined_table
@@ -169,8 +169,8 @@ FROM T1
 --Use such date functions. Don't forget to call up columns you might need later.
 
 
---Müşterilerin ziyaret aylarını, o aylardaki aktivite sayılarını, 
---müşterilerin birbirini takip eden ziyaret ayları arasındaki aylık zaman farkını bulun
+--MÃ¼Ã¾terilerin ziyaret aylarÃ½nÃ½, o aylardaki aktivite sayÃ½larÃ½nÃ½, 
+--mÃ¼Ã¾terilerin birbirini takip eden ziyaret aylarÃ½ arasÃ½ndaki aylÃ½k zaman farkÃ½nÃ½ bulun
 
 
 
@@ -218,7 +218,7 @@ SELECT * FROM CNT_CUSTOMER_LOGS
 --Don't forget to call up columns you might need later.
 
 
---Müşterilerin birbirini takip eden ziyaret ayları arasındaki aylık boşluğu bulun
+--MÃ¼Ã¾terilerin birbirini takip eden ziyaret aylarÃ½ arasÃ½ndaki aylÃ½k boÃ¾luÃ°u bulun
 
 
 ;
@@ -287,9 +287,9 @@ FROM	T1
 
 
 
----önceki aydan gelen kaç müşteri var?
---her ay için bir önceki aydaki müşterilerle ilgilendiğimiz için time_gap=1 yaptığımızda peş peşe olan ayları getirecektir.
---Bu şekilde her ay için müşterileri saydığımda önceki aydan gelen müşteri sayısını hesaplayacaktır.
+---Ã¶nceki aydan gelen kaÃ§ mÃ¼Ã¾teri var?
+--her ay iÃ§in bir Ã¶nceki aydaki mÃ¼Ã¾terilerle ilgilendiÃ°imiz iÃ§in time_gap=1 yaptÃ½Ã°Ã½mÃ½zda peÃ¾ peÃ¾e olan aylarÃ½ getirecektir.
+--Bu Ã¾ekilde her ay iÃ§in mÃ¼Ã¾terileri saydÃ½Ã°Ã½mda Ã¶nceki aydan gelen mÃ¼Ã¾teri sayÃ½sÃ½nÃ½ hesaplayacaktÃ½r.
 
 
 CREATE or alter VIEW CNT_RETAINED_CUST AS
@@ -302,7 +302,7 @@ SELECT * FROM CNT_RETAINED_CUST
 
 
 
----Şimdi de aylardaki tüm müşteri sayılarını hesaplayacağım sonra yukarıdakilerle oranlayacağım.
+---Ãimdi de aylardaki tÃ¼m mÃ¼Ã¾teri sayÃ½larÃ½nÃ½ hesaplayacaÃ°Ã½m sonra yukarÃ½dakilerle oranlayacaÃ°Ã½m.
 
 CREATE or alter VIEW CNT_TOTAL_CUST AS
 SELECT *, COUNT (Cust_ID) OVER (PARTITION BY current_month) CNT_TOTAL_CUST
